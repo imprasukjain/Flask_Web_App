@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home Page - Gender Detection web app</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename = 'favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static',filename = 'apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static',filename = 'aos.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static',filename = 'bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static',filename = 'bootstrap-icons.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static',filename = 'boxicons.min.css') }}" rel="stylesheet" type = text/css>
+  <link href="{{ url_for('static',filename = 'glightbox.min.css') }}" rel="stylesheet" type = text/css>
+  <link href="{{ url_for('static',filename = 'remixicon.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static',filename = 'swiper-bundle.min.css') }}" rel="stylesheet" type="text/css">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static',filename = 'style.css') }}"rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{{ url_for('main.home') }}">MagicFace</a></h1>
+
+
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{{ url_for('main.home') }}">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+            <li><a class="nav-link scrollto" href="https://github.com/imprasukjain" target="_blank">Github</a></li>
+          <li class="dropdown"><a href="#"><span>Other Projects</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="https://objdetectionusingyolov.streamlit.app/" target="_blank">Object Detection</a></li>
+              <li><a href="https://github.com/imprasukjain/Variational-Autoencoder" target="_blank">Variational Auto Encoder </a></li>
+              <li><a href="https://github.com/imprasukjain/DCGAN" target="_blank">Deep Convolutional GAN</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="https://www.instagram.com/imprasukjain/" target="_blank">Know More</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1>MagicFace</h1>
+          <h2>Unveil the Enchanted Self: Transform, Blur, and Filter Faces in a Magical Instant</h2>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      </div>
+
+      <div class="row icon-boxes">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-stack-line"></i></div>
+            <h4 class="title"><a href="{{ url_for('main.upload') }}">Gender Detection Model</a></h4>
+            <p class="description">Discover the power of our Gender Detection Model. Instantly identify the gender from a single image with precision and ease. No technical knowledge required. Simplify gender classification effortlessly.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-palette-line"></i></div>
+            <h4 class="title"><a href="{{ url_for('future.announcement') }}"target="_blank">Age Detection Model</a></h4>
+            <p class="description">Instantly estimate ages from photos. No expertise needed. Stay tuned for real-time age detection in our future update. Simplify age estimation effortlessly.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-command-line"></i></div>
+            <h4 class="title"><a href="{{ url_for('future.announcement') }}">Face Expression Analysis</a></h4>
+            <p class="description">Uncover emotions with precision. Detect and analyze facial expressions instantly. Stay tuned for our future update, bringing real-time expression analysis for enhanced understanding.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-fingerprint-line"></i></div>
+            <h4 class="title"><a href="{{ url_for('future.announcement') }}">Live Filters</a></h4>
+            <p class="description">Transform your face in real-time. Apply stunning filters instantly. Stay tuned for our upcoming project, bringing a whole new level of dynamic and interactive live filters.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Me</h2>
+          <p>I run on Coffee mostly </p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+                I am a Computer Science student at MITS,Gwalior. I am passionate about Machine Learning and Computer Vision. I am currently working on different Machine Learning Projects
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> I love watching web-series on NETFLIX</li>
+              <li><i class="ri-check-double-line"></i> Lazy Learner</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Oh, wait!! <br>
+                You are here for some coding related stuff, right? <br>
+                Here is the repo for the project <br>
+            </p>
+            <a href="https://github.com/imprasukjain/Face-Recognition-Webapp" target="_blank" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+      <div class="container">
+
+        <div class="row justify-content-end">
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="2" class="purecounter"></span>
+              <p>Hours to make this</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="2" class="purecounter"></span>
+              <p>Days to make ML pipeline</p>
+            </div>
+          </div>
+
+
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="2" class="purecounter"></span>
+              <p>Next Update in (Days)</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Sevices</h2>
+          <p>"Enhance, Engage, Excel: Unleashing the Power of Next-Level Services"</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-blue">
+
+              <h4 style="color: #124265;"><a href=""></a>Gender Detection Service</h4>
+              <p> Utilize our advanced Gender Detection Model to accurately determine the gender of individuals in images or videos, providing valuable demographic insights for various applications like market research, audience analysis, or personalized experiences.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-orange ">
+
+              <h4 style="color: #124265;"><a href=""{{ url_for('future.announcement') }}"">Age Detection Service</a></h4>
+              <p>Leverage our Age Detection Model to estimate the age of individuals from images or videos, enabling targeted marketing campaigns, age-specific content recommendations, or age verification processes for age-restricted services.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-pink">
+
+              <h4 style="color: #124265;"><a href=""{{ url_for('future.announcement') }}"">Face Expression Analysis Service</a></h4>
+              <p>Offer real-time Face Expression Analysis to recognize and analyze facial expressions, providing applications in emotion detection, sentiment analysis, user engagement measurement, or interactive experiences like personalized avatars or virtual assistants.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-yellow">
+
+              <h4 style="color: #124265;"><a href=""{{ url_for('future.announcement') }}"">Live Filters Service</a></h4>
+              <p>Launch an innovative Live Filters service that enables users to apply dynamic and interactive filters to their faces in real-time, fostering creativity, enhancing user-generated content, and providing an engaging visual experience.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-red">
+
+              <h4 style="color: #124265;"><a href="#contact">Custom Model Development</a></h4>
+              <p>Develop customized AI models based on clients' specific requirements, such as building a model for recognizing specific facial attributes, unique age ranges, or specialized gender classification.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-teal">
+
+              <h4 style="color: #124265;"><a href="#contact">Training and Support</a></h4>
+              <p>Provide comprehensive training sessions and ongoing technical support to clients, empowering them to maximize the benefits of your facial analysis services and troubleshoot any issues that may arise.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+        <div class="text-center">
+          <h3>Call To Action</h3>
+          <h4> Still not Convinced?</h4>
+            <p>Get a Live Demo</p>
+          <a class="cta-btn" href="mailto:p.jain161202@gmail.com">Contact for Demo</a>
+        </div>
+      </div>
+    </section><!-- End Cta Section -->
+
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title" >
+          <h2>Developer</h2>
+          <p>Unleashing Innovation</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" >
+            <div class="member">
+              <div class="member-img">
+                <img src="{{ url_for('static',filename = 'team-1.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://twitter.com/Prasuksays" target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.facebook.com/prasuk.jain.37625/" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/imprasukjain/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/prasuk-jain-4bb922226/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Prasuk Jain</h4>
+              </div>
+            </div>
+
+          </div>
+
+    </section>
+
+
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>FAQs Unveiled: Unleashing Clarity Through Curiosity</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Do we need to create a account for using this? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  No, you can use this website without creating an account. But if you want to save your progress, you need to create an account.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Is this website free to use? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                    Yes, this website is free to use. You can use it as much as you want.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">What about our data which we upload? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                    We don't store any of your data. We just use it for the time of processing and then we delete it. Your Data is secure with us.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">How can I provide feedback or suggestions? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                    You can provide feedback or suggestions by clicking this <a href="mailto:p.jain161202@gmail.com">Email Us</a>
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Are there any specific system requirements to use this website? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                    No, you can use this website on any device. You just need a browser and stable internet connection.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Connecting Made Easy: Reach Out, We're Here to Help</p>
+        </div>
+
+          <div>
+              <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14540.722586261378!2d78.1773727!3d26.2182875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399d8d0b59d4ea9d%3A0x8243589aa5183a84!2sGwalior%2C%20Madhya%20Pradesh%2C%20India!5e0!3m2!1sen!2s!4v1658967382207" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+
+          <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Gwalior, Madhya Pradesh</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info.magicface@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+918819855540</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+              <form method="POST" action="{{ url_for('main.contact') }}" class="form">
+                  {{ form.csrf_token }}
+
+                  <div class="form-group">
+                      <label for="username">Name</label>
+                      {{ form.username(class_='form-control', id='username') }}
+                  </div>
+
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      {{ form.email(class_='form-control', id='email') }}
+                  </div>
+
+                  <div class="form-group">
+                      <label for="Mobile">Mobile</label>
+                      {{ form.Mobile(class_='form-control', id='Mobile') }}
+                  </div>
+
+                  <div class="form-group">
+                      <label for="message">Message</label>
+                      {{ form.message(class_='form-control', id='message') }}
+                  </div>
+                  <br>
+
+                  <div class="form-group" >
+                      {{ form.submit(class_='btn btn-primary') }}
+                  </div>
+              </form>
+
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>MagicFace</h3>
+            <p>
+              Gwalior,Madhya Pradesh, 474001 <br>
+              India <br><br>
+              <strong>Phone:</strong> +918819855540<br>
+              <strong>Email:</strong> info.magicface@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Gender Detection Service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Age Detection Service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Face Expression Analysis Service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Live Filters</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Training and Support</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>"Stay in the Loop: Subscribe to Our Newsletter for the Latest Updates and Exclusive Content!"</p>
+            <form action="/subscribe" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>MagicFace</span></strong>. All Rights Reserved
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="{{url_for('future.announcement')}}" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static',filename = 'purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static',filename = 'aos.js') }}"></script>
+  <script src="{{ url_for('static',filename = 'bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',filename = 'glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static',filename = 'isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static',filename = 'swiper-bundle.min.js') }}"></script>
+  <script src="validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static',filename = 'main.js') }}"></script>
+
+</body>
+
+</html>

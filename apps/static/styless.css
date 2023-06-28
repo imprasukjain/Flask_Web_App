@@ -1,0 +1,15 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #777;
+    margin-top: 20px;
+}

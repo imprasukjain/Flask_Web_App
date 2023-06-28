@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload</title>
+    <link href="{{ url_for('static', filename = 'favicon.png') }}" rel="icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .upload-form {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .upload-input {
+            display: none;
+        }
+
+        .upload-label {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ff5722;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .upload-label:hover {
+            background-color: #ff7043;
+        }
+
+        .uploaded-image {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        navbar {
+            background-color: wheat;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #6610f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: blue;
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<nav id="navbar" class="navbar">
+    <h1 class="logo"><a href="{{ url_for('main.home') }}">MagicFace</a></h1>
+    <a href="{{ url_for('main.home') }}">Home</a>
+    <a href="{{ url_for('main.upload') }}">Gender Prediction</a>
+    <a href="mailto:p.jain161202@gmail.com">Contact</a>
+</nav>
+</div>
+<div class="container">
+    <h1>Image Upload</h1>
+
+    <form class="upload-form" action="{{ url_for('main.upload') }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        {{ form.image(class_='upload-input', id='image-upload', accept='image/*') }}
+        <label for="image-upload" class="upload-label">Choose Image</label><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if fileupload %}
+        <div class="predicted-image">
+            <h3>Predicted Image:</h3>
+            <img id="predicted-image" src="{{ url_for('static', filename='predict/' + pred_image) }}" alt="Predicted Image" width="500">
+
+        </div>
+        <div class="report">
+            <h3>Report:</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Grayscale Image</th>
+                    <th>Gender Name</th>
+                    <th>Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entry in report %}
+                    <tr>
+                        <td><img src="{{ url_for('static',filename = 'predict/' +entry[0]) }}" width="100"></td>
+                        <td>{{ entry[2] }}</td>
+                        <td>{{ entry[3] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+</div>
+<script>
+    document.getElementById('image-upload').addEventListener('change', function (e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+            document.getElementById('uploaded-image').src = event.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    });
+</script>
+
+</body>
+</html>
