@@ -27,3 +27,4 @@ unicorn==1.0.3
 Werkzeug==2.0.3
 WTForms==3.0.1
 gunicorn
+email_validator
