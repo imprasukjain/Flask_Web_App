@@ -12,7 +12,7 @@ This is a machine learning-based gender detection web application developed usin
 
 ## Demo
 
-A live demo of the application can be accessed [here](https://your-app-url).
+A live demo of the application can be accessed [here](https://magicface.tech).
 
 ## Installation
 
